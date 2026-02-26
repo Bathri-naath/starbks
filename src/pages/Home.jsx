@@ -22,7 +22,7 @@ const Home = () => {
       image: Carapro,
       title: "Caramel protein is here",
       description:
-        "Power up with the new Caramel Protein Latte and Caramel Protein Matcha. Handcrafted with Protein-boosted Milk for up to 31 grams of protein per grande.",
+        "Power up with the new Caramel Protein Latte and Caramel Protein Matcha. Handcrafted with Protein-boosted Milk for up to 31 grams of protein per grande. Available hot, iced and with sugar-free syrup.",
       linkText: "Explore Caramel Protein",
       linkTo: "/rewards",
       reverse: true
@@ -38,19 +38,25 @@ const Home = () => {
   ]
 
   return (
-    <div className="px-9">
-      <div className="w-full max-w-7xl mx-auto flex items-center justify-center gap-6 bg-[#1b3321] text-white px-10 py-16">
-        <h1 className="text-3xl font-semibold">
+    <div className="px-4 lg:px-9">
+
+      {/* Hero Section */}
+      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-6 bg-[#1b3321] text-white px-6 lg:px-10 py-16 text-center rounded-md">
+
+        <h1 className="text-2xl lg:text-3xl font-semibold">
           Its a great day for coffee
         </h1>
 
         <Link
           to="/menu"
-          className="bg-white text-black px-6 py-2 rounded-full font-medium"
+          className="bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition"
         >
           Start now
         </Link>
+
       </div>
+
+      {/* Feature Sections */}
       {features.map((feature, index) => (
         <Features
           key={index}
