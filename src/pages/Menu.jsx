@@ -14,18 +14,14 @@ const Menu = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-8">
-
-      {/* Sticky Tabs */}
       <div className="sticky top-0 bg-white z-40 border-b">
         <div className="flex gap-6 py-4 text-sm font-medium max-w-7xl mx-auto">
-
           <Link
             to="/menu"
             className={isBaseMenu ? "border-b-2 border-black pb-1" : ""}
           >
             Menu
           </Link>
-
           <Link
             to="featured"
             className={
@@ -39,15 +35,9 @@ const Menu = () => {
 
         </div>
       </div>
-
-      {/* Render Nested Pages */}
       {!isBaseMenu && <Outlet />}
-
-      {/* Default Menu Layout */}
       {isBaseMenu && (
         <div className="flex flex-col lg:flex-row gap-12 mt-10">
-
-          {/* Sidebar */}
           <div className="hidden lg:block w-64 sticky top-20 h-fit">
 
             <h2 className="font-bold mb-4">Fan Favorites</h2>
@@ -73,15 +63,11 @@ const Menu = () => {
             </div>
 
           </div>
-
-          {/* Right Content */}
           <div className="flex-1">
 
             <h1 className="text-3xl font-bold mb-8">
               Menu
             </h1>
-
-            {/* Fan Favorites */}
             <h2 className="text-2xl font-bold mb-4">
               Fan Favorites
             </h2>
@@ -141,16 +127,11 @@ const Menu = () => {
                 />
                 <span className="text-xl">Matcha</span>
               </Link>
-
             </div>
-
           </div>
-
         </div>
       )}
-
     </div>
   )
 }
-
 export default Menu

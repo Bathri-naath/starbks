@@ -19,8 +19,6 @@ const Navbar = () => {
             alt="Starbucks Coffee"
           />
         </Link>
-
-        {/* Desktop Navigation (UNCHANGED) */}
         <div className='hidden lg:flex items-center gap-4 px-3'>
           <Link to='/menu'>Menu</Link>
           <Link to='/rewards'>Rewards</Link>
@@ -31,8 +29,6 @@ const Navbar = () => {
           <Link to='/signin'>Sign in</Link>
           <Link to='/joinnow'>Join now</Link>
         </div>
-
-        {/* Mobile Hamburger */}
         <button
           className='lg:hidden text-3xl ml-auto'
           onClick={() => setIsOpen(!isOpen)}
@@ -41,36 +37,26 @@ const Navbar = () => {
         </button>
 
       </div>
-
-      {/* Mobile Dropdown */}
       {isOpen && (
         <div className='lg:hidden flex flex-col gap-4 mt-4 pb-6 border-t pt-4'>
-
           <Link onClick={() => setIsOpen(false)} to='/menu'>
             Menu
           </Link>
-
           <Link onClick={() => setIsOpen(false)} to='/rewards'>
             Rewards
           </Link>
-
           <Link onClick={() => setIsOpen(false)} to='/giftcards'>
             Gift Cards
           </Link>
-
           <hr />
-
           <Link onClick={() => setIsOpen(false)} to='/signin'>
             Sign in
           </Link>
-
           <Link onClick={() => setIsOpen(false)} to='/joinnow'>
             Join now
           </Link>
-
         </div>
       )}
-
     </div>
   )
 }
