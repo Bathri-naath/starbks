@@ -32,6 +32,9 @@ const Rewards = () => {
         <div className='flex flex-col items-center'>
             <h1>Getting started is easy</h1>
             <h2>Earn stars and get rewarded in a few easy steps</h2>
+            <div>
+                
+            </div>
         </div>
     </div>
   )
