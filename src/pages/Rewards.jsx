@@ -1,5 +1,5 @@
 import React from 'react'
-import Coldbrew from '../assets/Coldbrew.png'
+import Coldbrew from '../assets/coldbrew.png'
 
 const Rewards = () => {
   return (
