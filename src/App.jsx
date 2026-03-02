@@ -8,6 +8,8 @@ import Signin from './pages/Signin'
 import Joinnow from './pages/Joinnow'
 import Home from './pages/Home'
 import Footer from './components/Footer'
+import Featured from './pages/Featured'
+import CategoryPage from './pages/CategoryPage'
 
 const App = () => {
   return (
@@ -15,7 +17,10 @@ const App = () => {
     <Navbar />
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/menu' element={<Menu />} />
+        <Route path="/menu" element={<Menu />}>
+          <Route path="featured" element={<Featured />} />
+          <Route path=":category" element={<CategoryPage />} />
+        </Route>
       <Route path='/rewards' element={<Rewards />} />
       <Route path='/giftcards' element={<Giftcards />} />
       <Route path='/signin' element={<Signin />} />
