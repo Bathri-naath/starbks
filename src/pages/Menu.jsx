@@ -6,11 +6,18 @@ import Protein from "../assets/cmlprot.png"
 import HotCoffee from "../assets/hotcoffee.png"
 import ColdCoffee from "../assets/coldcoffee.png"
 import Matcha from "../assets/matcha.png"
+import MenuItems from "../components/MenuItems"
 
 const Menu = () => {
 
   const location = useLocation()
   const isBaseMenu = location.pathname === "/menu"
+  const drinks = [
+    {title: "Protein Beverages", image : Protein, path: "protein"},
+    {title: "Hot Coffee", image : HotCoffee, path: "hot-coffee"},
+    {title: "Cold Coffee", image : ColdCoffee, path: "cold-coffee"},
+    {title: "Matcha", image : Matcha, path: "match"},
+  ]
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-8">
@@ -48,18 +55,15 @@ const Menu = () => {
             <h2 className="font-bold mb-4">Drinks</h2>
 
             <div className="flex flex-col gap-4 text-gray-600">
-              <Link to="protein" className="hover:text-black">
-                Protein Beverages
-              </Link>
-              <Link to="hot-coffee" className="hover:text-black">
-                Hot Coffee
-              </Link>
-              <Link to="cold-coffee" className="hover:text-black">
-                Cold Coffee
-              </Link>
-              <Link to="matcha" className="hover:text-black">
-                Matcha
-              </Link>
+              {drinks.map((drink)=> (
+                <MenuItems 
+                key={drink.path}
+                to={drink.path}
+                image={drink.image}
+                title={drink.title}
+                sidebar
+                />
+              ))}
             </div>
 
           </div>
@@ -91,42 +95,14 @@ const Menu = () => {
             <hr className="mb-12" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-16 gap-x-20">
-
-              <Link to="protein" className="flex items-center gap-6 hover:opacity-80">
-                <img
-                  src={Protein}
-                  alt="Protein"
-                  className="w-28 h-28 rounded-full p-3"
+                {drinks.map((drink)=> (
+                <MenuItems 
+                key={drink.path}
+                to={drink.path}
+                image={drink.image}
+                title={drink.title}
                 />
-                <span className="text-xl">Protein Beverages</span>
-              </Link>
-
-              <Link to="hot-coffee" className="flex items-center gap-6 hover:opacity-80">
-                <img
-                  src={HotCoffee}
-                  alt="Hot Coffee"
-                  className="w-28 h-28 rounded-full p-3"
-                />
-                <span className="text-xl">Hot Coffee</span>
-              </Link>
-
-              <Link to="cold-coffee" className="flex items-center gap-6 hover:opacity-80">
-                <img
-                  src={ColdCoffee}
-                  alt="Cold Coffee"
-                  className="w-28 h-28 rounded-full p-3"
-                />
-                <span className="text-xl">Cold Coffee</span>
-              </Link>
-
-              <Link to="matcha" className="flex items-center gap-6 hover:opacity-80">
-                <img
-                  src={Matcha}
-                  alt="Matcha"
-                  className="w-28 h-28 rounded-full p-3"
-                />
-                <span className="text-xl">Matcha</span>
-              </Link>
+              ))}
             </div>
           </div>
         </div>
