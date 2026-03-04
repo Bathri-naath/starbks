@@ -1,7 +1,45 @@
 import React from 'react'
 import Coldbrew from '../assets/coldbrew.png'
+import Rewfeatures from '../components/Rewfeatures'
 
 const Rewards = () => {
+    const gtstrt =[
+        {id:1,
+            title:"Create an account",
+            dpara:(
+            <>
+            To get started,{" "}
+            <a href="/joinnow" className='underline text-green-600'>join now.</a> {" "}You can also{" "}
+            <a href="https://www.google.co.in" className='underline text-green-600'>join in the app</a>{" "}to get access to the full range of Starbucks® Rewards benefits.
+            </>
+            ),
+            mpara:(
+                <>
+                <a href="https://www.google.co.in" className='underline text-green-600'>Join in the app</a>{" "}to get access to the full range of Starbucks® Rewards benefits. You can also{" "}
+                <a href="/joinnow" className='underline text-green-600'>join online</a>.</>
+            )
+        },
+        {id:2,
+            title:"Order and pay how you'd like",
+            dpara:(
+            <>
+            Use cash, credit/debit card or save some time and pay right through the app. You’ll collect Stars all ways.{" "}
+            <a href="/joinnow" className='underline text-green-600'>Learn how.</a>
+            </>
+            ),
+            mpara:(
+            <>
+            Use cash, credit/debit card or save some time and pay right through the app. You’ll collect Stars all ways.{" "}
+            <a href="/joinnow" className='underline text-green-600'>Learn how.</a>
+            </>
+            )
+        },
+        {id:3,
+            title:"Earn stars, get rewards",
+            dpara:"As you earn Stars, you can redeem them for Rewards—like free food, drinks, and more. Start redeeming with as little as 25 Stars!",
+            mpara:"As you earn Stars, you can redeem them for Rewards—like free food, drinks, and more. Start redeeming with as little as 25 Stars!"
+        }
+    ]
   return (
     <div>
         <div className='w-full max-w-full flex flex-row justify-between items-center lg:flex-row lg:items-center gap-6 bg-[#1b3321] text-white px-6 lg:px-10 py-3'>
@@ -32,8 +70,17 @@ const Rewards = () => {
         <div className='flex flex-col items-center'>
             <h1>Getting started is easy</h1>
             <h2>Earn stars and get rewarded in a few easy steps</h2>
-            <div>
-                
+            <div className='mx-6 lg:mx-25 py-9'>
+                <div className='flex flex-col lg:flex-row'>
+                    {gtstrt.map((gtstrt)=>(
+                    <Rewfeatures
+                    key={gtstrt.id}
+                    id={gtstrt.id}
+                    title={gtstrt.title}
+                    mpara={gtstrt.mpara}
+                    dpara={gtstrt.dpara}
+                     />))}
+                </div>
             </div>
         </div>
     </div>
