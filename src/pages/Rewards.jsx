@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import Coldbrew from '../assets/coldbrew.png'
 import Rewfeatures from '../components/Rewfeatures'
 
@@ -40,6 +41,9 @@ const Rewards = () => {
             mpara:"As you earn Stars, you can redeem them for Rewards—like free food, drinks, and more. Start redeeming with as little as 25 Stars!"
         }
     ]
+    const stars=[25, 100, 200, 300, 400]
+    const [active,setActive]=useState(0)
+
   return (
     <div>
         <div className='w-full max-w-full flex flex-row justify-between items-center lg:flex-row lg:items-center gap-6 bg-[#1b3321] text-white px-6 lg:px-10 py-3'>
@@ -80,6 +84,31 @@ const Rewards = () => {
                     mpara={gtstrt.mpara}
                     dpara={gtstrt.dpara}
                      />))}
+                </div>
+            </div>
+        </div>
+        <div className='bg-[#F0F2F5] pt-6 my-2'>
+            <p className='text-center font-bold'>Get your favourites for free</p>
+            <div className='flex justify-center'>
+                <div className='relative w-full max-w-md'>
+                    <div className='flex justify-between'>
+                        {stars.map((value,index)=>(
+                            <button
+                            key={value}
+                            onClick={()=>setActive(index)}
+                            className='flex-1 py-2'>
+                                {value}
+                            </button>
+                        ))
+                        }
+                    </div>
+                    <div
+                    className='absolute bottom-0 h-1 bg-green-700 transition-all duration-300'
+                    style={{
+                        width: `${100/ stars.length}%`,
+                        left: `${(100 / stars.length) * active}%`
+                    }}>
+                    </div>
                 </div>
             </div>
         </div>
